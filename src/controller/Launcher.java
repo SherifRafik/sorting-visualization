@@ -22,9 +22,7 @@ public class Launcher extends Application {
         String path = currentRelativePath.toAbsolutePath().toString() + "\\src\\view\\TheStage.fxml";
         Parent root = FXMLLoader.load(new File(path).toURI().toURL());
         primaryStage.setOnCloseRequest(event -> primaryStage.close());
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Sorting");
-        //Scene scene = new Scene(root,506,506);
         Scene scene = new Scene(root,827,483);
         scene.getStylesheets().add(getClass().getResource("/resources/application.css").toExternalForm());
         primaryStage.setScene(scene);
