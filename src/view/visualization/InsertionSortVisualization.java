@@ -9,6 +9,7 @@ public class InsertionSortVisualization extends PApplet {
 	
 	private int[] toBeSorted;
 	private int firstUnsortedIndex;
+	int j;
 	private int xLocation;
 	private int widthOfRect;
 	
@@ -23,6 +24,8 @@ public class InsertionSortVisualization extends PApplet {
 		xLocation = width / toBeSorted.length;
 		widthOfRect = xLocation - 1;
 		firstUnsortedIndex = 1;
+		j = firstUnsortedIndex;
+		
 	}
 
 	public void draw() {
@@ -30,21 +33,24 @@ public class InsertionSortVisualization extends PApplet {
 			return;
 		
 		background(0);
+		
 		int newElement = toBeSorted[firstUnsortedIndex];
-		int j;
+		
 		for(j = firstUnsortedIndex; j > 0 && toBeSorted[j - 1] > newElement ; j--) {
 			toBeSorted[j] = toBeSorted[j - 1];
-		}
-				
-		System.out.println(j);
+		}	
+	
+		toBeSorted[j] = newElement;
+		
 		for(int i = 0 ; i < toBeSorted.length ; i++) {
 			delay(15);
 			fill(255);
+		    if (i==firstUnsortedIndex)
+		      	fill(255, 255, 66);
 		    rect(i*xLocation, height-toBeSorted[i], widthOfRect , toBeSorted[i]);
-		}		
-		toBeSorted[j] = newElement;
-
+		}
 
 		firstUnsortedIndex++;
+
 	}
 }
