@@ -27,6 +27,8 @@ public class Visualizer extends JFrame {
     		selectionSortVisualization();
     	else if(sortingTechnique.equals("Insertion Sort"))
     		insertionSortVisualization();
+    	else if(sortingTechnique.equals("Quick Sort"))
+    		quickSortVisualization();
     	else
     		bubbleSortVisualization();
     	
@@ -60,6 +62,14 @@ public class Visualizer extends JFrame {
     	isv.frame = this;
         add(isv, BorderLayout.CENTER);
         isv.init();
+    }
+    
+    private void quickSortVisualization() {
+        setTitle("Quick Sort Visualization");
+    	QuickSortVisualization qsv = new QuickSortVisualization();
+    	qsv.frame = this;
+        add(qsv, BorderLayout.CENTER);
+        qsv.init();
     }
     
     
